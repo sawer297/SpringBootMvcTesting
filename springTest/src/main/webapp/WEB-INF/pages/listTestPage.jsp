@@ -13,7 +13,7 @@
 	<table>
 		<c:forEach items="${items}" var="listItem">
 			<tr>
-				<td><c:out value="${listItem}"/></td>
+			<td><a href="/secondPageRedirect?name=${listItem}"><c:out value="${listItem}"/></a></td>
 			</tr>
 		</c:forEach>
 	</table>

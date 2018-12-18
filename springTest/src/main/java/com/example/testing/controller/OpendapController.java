@@ -25,6 +25,7 @@ public class OpendapController{
 	
 	/**
 	 * method for redirecting to list page from first button
+	 * use POST for Button
 	 * @return
 	 */
 	@RequestMapping(value="/testRedirect",params="list", method=RequestMethod.POST)
@@ -34,23 +35,33 @@ public class OpendapController{
 	}
 	
 	/**
+	 * 12/18/18 - SBL - Modified method
 	 * method for redirecting to list page from hyper-link
+	 * use GET for Links
+	 * successful test of one line redirect with variables
 	 * @return
 	 */
 	@RequestMapping(value="/testRedirect", method=RequestMethod.GET)
 	public ModelAndView testRedirectGet(){
 		System.out.println("redirect to list checkpoint reached");
-		return new ModelAndView("redirect:/listTestPage");
+		return new ModelAndView("redirect:/secondPage?name=hyperlink test");
 	}
 	
 	/**
-	 * method for redirecting to second page from second page
+	 * 12/18/18 - SBL - Modified method
+	 * method for redirecting to second page from second button
+	 * use POST for Button
+	 * successful test of using a ModelAndView to pass variables
 	 * @return
 	 */
 	@RequestMapping(value="/testRedirect",params="second", method=RequestMethod.POST)
 	public ModelAndView secondRedirect(){
 		System.out.println("redirect to second page checkpoint reached");
-		return new ModelAndView("redirect:/secondPage");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("secondPage");
+		String str = "button test";
+		mav.addObject("message", str);
+		return mav;
 	}
 	
 }

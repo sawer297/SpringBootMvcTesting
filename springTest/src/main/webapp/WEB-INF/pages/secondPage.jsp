@@ -7,6 +7,7 @@
 <title>Another page for testing</title>
 </head>
 <body>
-	<h1>${message}</h1>
+	<h1>There should be a message below ...</h1>
+	<h2>${message}</h2>
 </body>
 </html>

@@ -11,11 +11,11 @@
 	<h1>${message}</h1>
 	<p>a paragraph tag area</p>
 	<form:form method="POST" action="/testRedirect" >
-		<input type="submit" name="list" value="TestPage"/>
-		<input type="submit" name="second" value="SecondPage"/>
+		<input type="submit" name="list" value="List_Page"/>
+		<input type="submit" name="second" value="Second_Page"/>
 	</form:form >
 	<form:form>
-		<a href="/testRedirect" >Hyper-link</a>
+		<a href="/testRedirect" >Second_Page</a>
 	</form:form>
 </body>
 </html>
