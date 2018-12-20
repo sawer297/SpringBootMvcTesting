@@ -1,3 +1,12 @@
+/**
+ * Opendap Controller
+ * 		handles access and events of opendap.jsp page
+ * 
+ * 11/27/18 - SBL - initial creation of controller
+ * 12/4/18 - SBL - testRedirectPost, testRedirectGet, and 
+ * 		secondRedirect methods added
+ */
+
 package com.example.testing.controller;
 
 import org.springframework.stereotype.Controller;
@@ -10,7 +19,9 @@ public class OpendapController{
 	
 	/**
 	 * method for accessing Opendap home page
-	 * @return 
+	 * @return ModelAndView object redirecting to opendap.jsp
+	 * 
+	 * 11/27/18 - SBL - initial code
 	 */
 	@RequestMapping(value="/opendap", method = RequestMethod.GET)
 	public ModelAndView opendap() {
@@ -24,9 +35,12 @@ public class OpendapController{
 	}	
 	
 	/**
+	 * >> BUTTON
 	 * method for redirecting to list page from first button
-	 * use POST for Button
-	 * @return
+	 * matches POST from opendap.jsp form tag
+	 * @return ModelAndView object redirecting to listTestPage.jsp
+	 * 
+	 * 12/4/18 - SBL - Initial code
 	 */
 	@RequestMapping(value="/testRedirect",params="list", method=RequestMethod.POST)
 	public ModelAndView testRedirectPost(){
@@ -35,11 +49,14 @@ public class OpendapController{
 	}
 	
 	/**
-	 * 12/18/18 - SBL - Modified method
+	 * >> HYPER-LINK
 	 * method for redirecting to list page from hyper-link
 	 * use GET for Links
-	 * successful test of one line redirect with variables
-	 * @return
+	 * @return ModelAndView object redirecting to secondPage.jsp
+	 * 
+	 * 12/4/18 - SBL - initial code
+	 * 12/18/18 - SBL - Modified method
+	 * 		successful test of one line redirect with variables 
 	 */
 	@RequestMapping(value="/testRedirect", method=RequestMethod.GET)
 	public ModelAndView testRedirectGet(){
@@ -48,11 +65,14 @@ public class OpendapController{
 	}
 	
 	/**
-	 * 12/18/18 - SBL - Modified method
+	 * >> BUTTON
 	 * method for redirecting to second page from second button
-	 * use POST for Button
-	 * successful test of using a ModelAndView to pass variables
-	 * @return
+	 * matches POST from opendap.jsp form tag
+	 * @return ModelAndView object redirecting to secondPage.jsp
+	 * 
+	 * 12/4/18 - SBL - initial code
+	 * 12/18/18 - SBL - Modified method
+	 * 		successful test of using a ModelAndView to pass variables
 	 */
 	@RequestMapping(value="/testRedirect",params="second", method=RequestMethod.POST)
 	public ModelAndView secondRedirect(){

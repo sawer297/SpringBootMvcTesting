@@ -1,3 +1,10 @@
+/**
+ * Web Security Configuration
+ * 		handles security for MVC pages
+ * 
+ * 11/29/18 - SBL - initial creation of configuration
+ */
+
 package com.example.testing.configuration;
 
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +19,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	/**
 	 * allows all accesses to web service through instead of asking
 	 *  for username and password
+	 *  
+	 *  11/29/18 - SBL - initial code
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{

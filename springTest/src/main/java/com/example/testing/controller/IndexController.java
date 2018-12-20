@@ -1,28 +1,37 @@
+/**
+ * Index Controller
+ * 		handles (hopefully) most invalid urls and 
+ * 		redirects to opendap.jsp
+ * 
+ * 11/29/18	- SBL - initial creation of controller
+ */
+
 package com.example.testing.controller;
 
-import java.io.IOException;
+//import java.io.IOException;
 
-import javax.servlet.http.HttpServletMapping;
-import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpServletMapping;
+//import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-@SuppressWarnings("unused")
 @Controller
 public class IndexController {
 	
 	/**
 	 * method used to redirect to a default page
 	 * @return ModelAndView object redirecting to opendap.jsp page
+	 * 
+	 * 11/29/18 - SBL - initial code
 	 */
 	@RequestMapping("/")
 	public ModelAndView index(){
 		return new ModelAndView("redirect:/opendap");
 	}
 	
-	//methods below are not used for varies reasons, but
+	//methods below are not used for various reasons, but
 	// kept for future references 
 	
 	//method used to redirect to a default page

@@ -1,4 +1,14 @@
+/**
+ * List Test Page Controller
+ * 		handles access and events of listTestPage.jsp
+ * 
+ * 11/27/18 - SBL - initial creation of controller
+ * 12/18/18 - SBL - SecondPageRedirect method added
+ */
+
 package com.example.testing.controller;
+
+//import java.util.List;
 
 //import java.util.List;
 
@@ -17,7 +27,11 @@ public class ListTestPageController{
 	
 	/**
 	 * method for accessing ListTestPage page
-	 * @return
+	 * @return ModelAndView object redirecting to listTestPage.jsp
+	 * 
+	 * 11/27/18 - SBL - initial code
+	 * 12/19/18 - SBL - do not try to pass an List<> object
+	 * 		page will 'Internal Server Error - 500' on loading
 	 */
 	@RequestMapping(value="/listTestPage", method = RequestMethod.GET)
 	public ModelAndView listTestPage(){
@@ -25,21 +39,20 @@ public class ListTestPageController{
 		mav.setViewName("listTestPage");
 		
 		mav.addObject("message", "The List to end all lists.");
+
 		mav.addObject("items", list);
 		System.out.println("list page checkpoint reached");
 		return mav;
 	}
 	
-	
-	
-	////////////////////////////////////////////////////////////////////////
-	// 12/18/18 - SBL
-	///////////////////////////////////////////
-	
 	/**
-	 *  method for redirecting a link, from the list on list page, to second page
-	 * @param item - message string 
-	 * @return redirect to second page
+	 * method for redirecting a link, from the list on list page, to second page
+	 * @param item - model containing a string that is used to set 'message' variable
+	 * @return ModelAndView object redirecting to secondPage.jsp
+	 * 
+	 * 12/18/18 - SBL - Initial Code
+	 * 12/20/18 - SBL - method no longer used, 
+	 * 		list items redirect straight to secondPage.jsp from listTestPage.jsp
 	 */
 	@RequestMapping(value="/secondPageRedirect", method = RequestMethod.GET)
 	public ModelAndView SecondPageRedirect(@ModelAttribute Item item){

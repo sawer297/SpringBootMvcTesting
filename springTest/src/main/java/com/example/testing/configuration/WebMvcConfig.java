@@ -1,3 +1,10 @@
+/**
+ * Web MVC Configuration
+ * 		Used to resolve controller calls to actual .jsp pages
+ * 
+ * 11/27/18 - SBL - Initial creation of configuration
+ */
+
 package com.example.testing.configuration;
 
 import org.springframework.context.annotation.Bean;
@@ -21,6 +28,8 @@ public class WebMvcConfig implements WebMvcConfigurer{
 	 * viewResolver method
 	 * used to redirect url's to proper JSP pages
 	 * @return 
+	 * 
+	 * 11/27/18 - SBL - Initial code
 	 */
 	@Bean
 	public InternalResourceViewResolver viewResolver() {

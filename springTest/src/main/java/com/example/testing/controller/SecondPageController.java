@@ -1,3 +1,11 @@
+/**
+ * Second Page Controller
+ * 		handles access and events of second page
+ * 		mostly for testing redirections
+ * 
+ * 12/4/18 - SBL - initial creation of controller
+ */
+
 package com.example.testing.controller;
 
 import org.springframework.stereotype.Controller;
@@ -12,6 +20,15 @@ import com.example.testing.model.Item;
 @Controller
 public class SecondPageController{
 	
+	/**
+	 * handles accessing second page as well as setting 'message' variable
+	 * @param item - model containing a string that is used to set 'message' variable
+	 * @return ModelAndView object redirecting to secondPage.jsp
+	 * 
+	 * 12/4/18 - SBL - initial code
+	 * 12/18/18 - SBL - modified code with model element, 
+	 * 		'message' variable now  set from passed in Item Model 
+	 */
 	@RequestMapping(value="/secondPage", method=RequestMethod.GET)
 	@ResponseBody
 	public ModelAndView secondPage(@ModelAttribute Item item){
@@ -19,12 +36,10 @@ public class SecondPageController{
 		mav.setViewName("secondPage");
 		
 		//String str = "something something something, so hard to come up with testing lines";
-		
-		// 12/18/18 - SBL
-		// modified so that second page message can be passed from another page
 		String str = item.getName();
 		mav.addObject("message", str);
 		System.out.println("second page checkpoint reached");
+		
 		return mav;
 	}
 	
