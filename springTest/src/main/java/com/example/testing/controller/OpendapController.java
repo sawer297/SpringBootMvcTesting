@@ -84,4 +84,20 @@ public class OpendapController{
 		return mav;
 	}
 	
+	/**
+	 * >> BUTTON
+	 * method for redirecting to form page from third button
+	 * matches POST from opendap.jsp form tag
+	 * @return ModelAndView object redirecting to formPage.jsp
+	 * 
+	 * 12/4/18 - SBL - initial code
+	 */
+	@RequestMapping(value="/testRedirect",params="form", method=RequestMethod.POST)
+	public ModelAndView formRedirect(){
+		//System.out.println("redirect to second page checkpoint reached");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("formPage");
+		return mav;
+	}
+	
 }

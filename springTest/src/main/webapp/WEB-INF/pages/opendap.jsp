@@ -13,6 +13,7 @@
 	<form:form method="POST" action="/testRedirect" >
 		<input type="submit" name="list" value="List_Page"/>
 		<input type="submit" name="second" value="Second_Page"/>
+		<input type="submit" name="form" value="Form_Page"/>
 	</form:form >
 	<form:form>
 		<a href="/testRedirect" >Second_Page</a>
