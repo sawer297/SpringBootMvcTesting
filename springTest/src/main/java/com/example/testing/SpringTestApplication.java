@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.testing.service.TestService;
+
 @SpringBootApplication
 @EnableScheduling
 public class SpringTestApplication {
@@ -21,5 +23,8 @@ public class SpringTestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringTestApplication.class, args);
 		log.info("Application has been started");
+		TestService ts = new TestService();
+		ts.getRandom();
+		ts.sendRequest();
 	}
 }
